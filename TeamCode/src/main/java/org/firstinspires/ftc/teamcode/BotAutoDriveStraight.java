@@ -39,7 +39,6 @@ import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name="Bot: Auto Drive Straight", group="Bot")
-@Disabled
 public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
     Bot robot = new Bot();
