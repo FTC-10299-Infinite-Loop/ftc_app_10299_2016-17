@@ -36,7 +36,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name="Bot: Teleop Tank", group="Bot")
-public class BotTeleop extends OpMode{
+public class BotTeleopTank extends OpMode{
 
     Bot robot = new Bot();
 
