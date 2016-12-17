@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -15,9 +16,9 @@ public class Bot
     public DcMotor collectMotor = null;
 
     //TODO: Figure out what direction we actually need the motors going in!
-    private DcMotor.Direction lfDirection = DcMotor.Direction.FORWARD;
+    private DcMotor.Direction lfDirection = DcMotor.Direction.REVERSE;
     private DcMotor.Direction rfDirection = DcMotor.Direction.FORWARD;
-    private DcMotor.Direction lbDirection = DcMotor.Direction.FORWARD;
+    private DcMotor.Direction lbDirection = DcMotor.Direction.REVERSE;
     private DcMotor.Direction rbDirection = DcMotor.Direction.FORWARD;
     private DcMotor.Direction winchDirection = DcMotor.Direction.FORWARD;
     private DcMotor.Direction collectDirection = DcMotor.Direction.FORWARD;

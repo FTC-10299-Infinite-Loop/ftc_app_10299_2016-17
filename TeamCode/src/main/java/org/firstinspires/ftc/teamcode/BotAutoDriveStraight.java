@@ -39,7 +39,7 @@ import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name="Bot: Auto Drive Straight", group="Bot")
-public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
+public class BotAutoDriveStraight extends LinearOpMode {
 
     Bot robot = new Bot();
     private ElapsedTime time = new ElapsedTime();
@@ -63,8 +63,9 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         // Step 1:  Drive forward for 3 seconds
         robot.setLeftPower(FORWARD_SPEED);
         robot.setRightPower(FORWARD_SPEED);
+        robot.collectMotor.setPower(-1.0);
         time.reset();
-        while (opModeIsActive() && (time.seconds() < 3.0)) {
+        while (opModeIsActive() && (time.seconds() < 2.5)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", time.seconds());
             telemetry.update();
         }
