@@ -39,6 +39,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class BotTeleopTank extends OpMode{
 
     Bot robot = new Bot();
+    boolean invertedControls = false;
+    boolean yPressed = false;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -76,6 +78,14 @@ public class BotTeleopTank extends OpMode{
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
         left = -gamepad1.left_stick_y;
         right = -gamepad1.right_stick_y;
+
+
+        if(invertedControls){
+            double temp = -left;
+            left = -right;
+            right = temp;
+        }
+
         robot.setLeftPower(left);
         robot.setRightPower(right);
 
@@ -91,6 +101,12 @@ public class BotTeleopTank extends OpMode{
         else {
             robot.winchMotor.setPower(0.0);
         }
+
+        if(gamepad1.y && !yPressed)
+        {
+            invertedControls = !invertedControls;
+        }
+        yPressed = gamepad1.y;
 
         // Send telemetry message to signify robot running;
         //telemetry.addData("left",  "%.2f", left);
