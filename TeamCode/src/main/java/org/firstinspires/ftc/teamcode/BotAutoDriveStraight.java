@@ -65,8 +65,8 @@ public class BotAutoDriveStraight extends LinearOpMode {
         robot.setRightPower(FORWARD_SPEED);
         robot.collectMotor.setPower(-1.0);
         time.reset();
-        while (opModeIsActive() && (time.seconds() < 2.5)) {
-            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", time.seconds());
+        while (opModeIsActive() && (time.seconds() < 2.15)) {
+            //telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", time.seconds());
             telemetry.update();
         }
         telemetry.addData("Path", "Complete");
